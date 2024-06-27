@@ -72,6 +72,14 @@ class Result {
         }
         return longestStr.isEmpty() ? "00" : longestStr;
     }
+
+    public static String longestEvenWordJava8(final String sentence) {
+        return Arrays.stream(sentence.split(" "))
+                .filter(word -> word.chars().allMatch(Character::isLetter))
+                .filter(word -> word.length() % 2 == 0)
+                .max((word1, word2) -> Integer.compare(word1.length(), word2.length()))
+                .orElse("00");
+    }
 }
 
 public class longestEvenWord {
@@ -86,6 +94,7 @@ public class longestEvenWord {
         final String result = Result.longestEvenWord(sentence);
 //        final String result = Result.longestEvenWord2(sentence);
 //        final String result = Result.longestEvenWord3(sentence);
+//        final String result = Result.longestEvenWordJava8(sentence);
 
         bufferedWriter.write(result);
         bufferedWriter.newLine();
