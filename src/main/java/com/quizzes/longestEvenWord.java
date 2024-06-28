@@ -1,6 +1,7 @@
 package com.quizzes;
 
 import java.io.*;
+import java.util.Arrays;
 
 class Result {
 
@@ -91,10 +92,10 @@ public class longestEvenWord {
 
         final String sentence = bufferedReader.readLine();
 
-        final String result = Result.longestEvenWord(sentence);
+//        final String result = Result.longestEvenWord(sentence);
 //        final String result = Result.longestEvenWord2(sentence);
 //        final String result = Result.longestEvenWord3(sentence);
-//        final String result = Result.longestEvenWordJava8(sentence);
+        final String result = Result.longestEvenWordJava8(sentence);
 
         bufferedWriter.write(result);
         bufferedWriter.newLine();
